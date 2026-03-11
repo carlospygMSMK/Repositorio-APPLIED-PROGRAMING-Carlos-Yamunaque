@@ -9,10 +9,9 @@
     // Montaje del proyecto
     "source=${localWorkspaceFolder},target=/app,type=bind"
     // (Linux) Montaje del directorio de claves ssh en el contenedor
-    ,
-    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,readonly"
+    //,"type=bind,source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,readonly"
     // (Windows) Montaje del directorio de claves ssh en el contenedor
-    // ,"type=bind,source=${localEnv:USERPROFILE}\\.ssh,target=/home/node/.ssh,readonly"
+     ,"type=bind,source=${localEnv:USERPROFILE}\\.ssh,target=/home/node/.ssh,readonly"
   ],
   "shutdownAction": "stopContainer",
   // Extensiones de VSC que queremos en el contenedor
