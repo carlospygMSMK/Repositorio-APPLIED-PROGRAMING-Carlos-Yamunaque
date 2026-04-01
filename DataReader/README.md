@@ -1,25 +1,21 @@
 # Treating Price Petrol in Spain
+Usaremos la línea de comandos para procesar los datos de precios de combustibles publicados por el Ministerio para la Transición Ecológica y el Reto Demográfico (MITERD) de España.
 
-  Usaremos la línea de comandos para procesar los datos de precios de combustibles publicados por el Ministerio para la Transición Ecológica y el Reto Demográfico (MITERD) de España.
+El proyecto está dividido en tres hitos de entrega:
 
-  El proyecto está dividido en tres hitos de entrega:
-
-| Hito | Descripción | Estado |
-------------------------------------------------------------------------------------------------------------------------------------------------
-| 1 | Procesado del fichero JSON y generación de estructuras de datos     | Completado |
-| 2 | Generación de informe diario con medias y top 5 más caras/baratas   | Pendiente  |
-| 3 | Generación de gráficas de variación de precios por día de la semana | Pendiente  |
-------------------------------------------------------------------------------------------------------------------------------------------------
+| Hito | Descripción                                                         | Estado     |
+------------------------------------------------------------------------------------------
+| 1    | Procesado del fichero JSON y generación de estructuras de datos     | Completado |
+| 2    | Generación de informe diario con medias y top 5 más caras/baratas   | Pendiente  |
+| 3    | Generación de gráficas de variación de precios por día de la semana | Pendiente  |
 
 # Requisitos del sistema
 - Node.js v18 o superior
 
-# Uso
-
-# Modo desarrollo (sin compilar)
-
+# Uso 
+Modo desarrollo (sin compilar)
 ```bash
-npx tsx src/01-data-reader.ts --input-file DataReader/sample-precios.json
+npx tsx src/index.ts --input-file data/samples-precios.json
 ```
 
 # Modo producción (compilado)
@@ -27,15 +23,14 @@ npx tsx src/01-data-reader.ts --input-file DataReader/sample-precios.json
 ```bash
 # Compila el proyecto
 npm run build
-
 # Ejecuta el binario compilado
-node dist/01-data-reader.ts --input-file DataReader/sample-precios.json
+node src/index.js --input-file data/sample-precios.json
 ```
 
 # Parámetros
 
-| Parámetro | Descripción | Obligatorio |
-|-----------|-------------|-------------|
+| Parámetro      | Descripción | Obligatorio |
+|----------------|-------------|-------------|
 | `--input-file` | Ruta al fichero JSON de precios del Ministerio | Sí |
 
 # Estructura del proyecto
@@ -114,10 +109,10 @@ El JSON devuelto tiene esta forma:
 
 # Scripts disponibles
 
-| Script | Descripción |
-|--------|-------------|
-| `npm run dev` | Ejecuta en modo desarrollo con `tsx` |
+| Script          | Descripción |
+|-----------------|-------------|
+| `npm run dev`   | Ejecuta en modo desarrollo con `tsx` |
 | `npm run build` | Compila TypeScript a JavaScript en `/dist` |
 | `npm run start` | Ejecuta el binario compilado |
-| `npm run lint` | Verifica tipos sin emitir ficheros |
+| `npm run lint`  | Verifica tipos sin emitir ficheros |
 
