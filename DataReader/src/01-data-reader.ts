@@ -1,10 +1,3 @@
-
-/**
- * Data Reader
- * 
- * Implements a process that reads a file, process it as a csv 
- * and then shows the data read in the console.
- */
 import fs from 'node:fs';
 
 type CsvRow = string[];
