@@ -116,3 +116,4 @@ El JSON devuelto tiene esta forma:
 | `npm run start` | Ejecuta el binario compilado |
 | `npm run lint`  | Verifica tipos sin emitir ficheros |
 
+//cd /app/DataReader && npx tsx src/index.ts --input-file data/samples-precios.json

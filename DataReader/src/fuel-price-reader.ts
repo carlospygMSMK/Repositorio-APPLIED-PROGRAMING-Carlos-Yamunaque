@@ -17,7 +17,7 @@ import type {
   EstacionServicio,
   DatosMinisterio,
   ProvinciaInteres,
-} from './types.ts';
+} from './types.js';
 
 // Constantes de configuración de negocio
 
