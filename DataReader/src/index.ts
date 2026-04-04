@@ -1,7 +1,7 @@
 /*
- * index.ts  Punto de entrada del programa. Lee el fichero JSON de precios del
- * Ministerio, procesa los datos y muestra por consola un resumen de las estaciones cargadas en las provincias de interés.
- */
+* index.ts  Punto de entrada del programa. Lee el fichero JSON de precios del Ministerio, procesa los datos y 
+* muestra por consola un resumen de las estaciones cargadas en las provincias de interés.
+*/
 
 import { FuelPriceReader } from './fuel-price-reader.js';
 import type { EstacionServicio } from './types.js';

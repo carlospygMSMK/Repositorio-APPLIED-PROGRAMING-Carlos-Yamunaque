@@ -13,15 +13,8 @@ export type ProvinciaInteres = 'Madrid' | 'Coruña' | 'Tenerife' | 'Badajoz';
 
 // Estructura raw del JSON del Ministerio
 
-/*
- * EstacionServicioRaw
- *
- * Representa una entrada del array "ListaEESSPrecio" tal y como la
- * devuelve la API REST del Ministerio.  Los nombres de las propiedades
- * reproducen exactamente los del JSON original (incluyendo espacios y
- * caracteres especiales), por lo que debemos acceder a ellas con
- * notación de corchetes.
- */
+/* EstacionServicioRaw: Los nombres de las propiedades reproducen exactamente los del JSON original (incluyendo espacios y caracteres especiales), por lo que debemos acceder a ellas con
+notación de corchetes.*/
 export interface EstacionServicioRaw {
   'C.P.': string;
   'Dirección': string;
@@ -57,9 +50,7 @@ export interface EstacionServicioRaw {
   'IDCCAA': string;
 }
 
-/*
- * RespuestaMinisterioRaw: Estructura raíz del JSON devuelto por la API del Ministerio.
- */
+/*RespuestaMinisterioRaw: Estructura raíz del JSON devuelto por la API del Ministerio.*/
 export interface RespuestaMinisterioRaw {
   /* Fecha y hora de la consulta en formato "DD/MM/YYYY HH:mm:ss" */
   Fecha: string;
@@ -69,17 +60,13 @@ export interface RespuestaMinisterioRaw {
 
 // Estructuras de dominio (procesadas)
 
-/*
- * PreciosCombustible: Mapa de precios ya convertidos a number (o null si no disponibles) para los combustibles de interés.
- */
+/*PreciosCombustible: Mapa de precios ya convertidos a number (o null si no disponibles) para los combustibles de interés.*/
 export interface PreciosCombustible {
   gasoleoA: number | null;
   gasolina95E5: number | null;
 }
 
-/*
- * EstacionServicio: Representación limpia y tipada de una estación de servicio, derivada de EstacionServicioRaw tras el parseo.
- */
+/* EstacionServicio: Representación limpia y tipada de una estación de servicio, derivada de EstacionServicioRaw tras el parseo.*/
 export interface EstacionServicio {
   id: string;
   rotulo: string;
@@ -95,9 +82,7 @@ export interface EstacionServicio {
   precios: PreciosCombustible;
 }
 
-/*
- * DatosMinisterio: Resultado final del procesado: fecha de consulta y lista de estaciones filtradas por provincias de interés.
- */
+/*DatosMinisterio: Resultado final del procesado: fecha de consulta y lista de estaciones filtradas por provincias de interés.*/
 export interface DatosMinisterio {
   fecha: Date;
   estaciones: EstacionServicio[];

@@ -22,8 +22,7 @@ import type {
 // Constantes de configuración de negocio
 
 /*
- * Provincias de interés para la empresa distribuidora.
- * Los valores coinciden con el campo "Provincia" del JSON del Ministerio.
+ * Provincias de interés para la empresa distribuidora. Los valores coinciden con el campo "Provincia" del JSON del Ministerio.
  * Nota: La Coruña aparece como "Coruña (A)" en el dataset oficial.
  */
 export const PROVINCIAS_INTERES: readonly string[] = [
@@ -33,9 +32,7 @@ export const PROVINCIAS_INTERES: readonly string[] = [
   'Badajoz',
 ];
 
-/*
- * Mapa de normalización: convierte el nombre de provincia del dataset al nombre interno usado en la aplicación.
- */
+/*Mapa de normalización: convierte el nombre de provincia del dataset al nombre interno usado en la aplicación.*/
 export const MAPA_PROVINCIAS: Readonly<Record<string, ProvinciaInteres>> = {
   'Madrid': 'Madrid',
   'Coruña (A)': 'Coruña',
@@ -44,9 +41,7 @@ export const MAPA_PROVINCIAS: Readonly<Record<string, ProvinciaInteres>> = {
 };
 
 // Helpers de parseo
-/*
- * Convierte un precio en formato español ("1,539") a número flotante. Devuelve null si el string está vacío o no es un número válido.
- */
+/*Convierte un precio en formato español ("1,539") a número flotante. Devuelve null si el string está vacío o no es un número válido.*/
 function parsePrecio(precioStr: string): number | null {
   if (!precioStr || precioStr.trim() === '') return null;
   const normalised = precioStr.trim().replace(',', '.');
@@ -54,9 +49,7 @@ function parsePrecio(precioStr: string): number | null {
   return isNaN(value) ? null : value;
 }
 
-/*
- * Convierte una coordenada en formato español ("40,425660") a número. Devuelve 0 si el string es inválido.
- */
+/*Convierte una coordenada en formato español ("40,425660") a número. Devuelve 0 si el string es inválido.*/
 function parseCoordenada(coordStr: string): number {
   if (!coordStr || coordStr.trim() === '') return 0;
   const normalised = coordStr.trim().replace(',', '.');
@@ -64,9 +57,7 @@ function parseCoordenada(coordStr: string): number {
   return isNaN(value) ? 0 : value;
 }
 
-/*
- * Parsea la fecha del Ministerio "DD/MM/YYYY HH:mm:ss" a objeto Date.
- */
+/*Parsea la fecha del Ministerio "DD/MM/YYYY HH:mm:ss" a objeto Date.*/
 function parseFecha(fechaStr: string): Date {
   // Formato: "31/03/2026 08:30:00"
   const [datePart, timePart] = fechaStr.split(' ');
@@ -78,9 +69,7 @@ function parseFecha(fechaStr: string): Date {
 }
 
 // Mapeo de raw → dominio
-/*
- * Transforma una EstacionServicioRaw en una EstacionServicio de dominio.
- */
+/*Transforma una EstacionServicioRaw en una EstacionServicio de dominio.*/
 function mapEstacion(raw: EstacionServicioRaw): EstacionServicio {
   return {
     id: raw['IDEESS'],
@@ -102,13 +91,8 @@ function mapEstacion(raw: EstacionServicioRaw): EstacionServicio {
 }
 
 // FuelPriceReader
-
-/*
- * Lee y procesa el fichero JSON de precios de combustibles
- * Extiende `AbstractReader<DatosMinisterio>` e implementa `read()`.
- */
+/* Lee y procesa el fichero JSON de precios de combustibles extiende `AbstractReader<DatosMinisterio>` e implementa `read()`.*/
 export class FuelPriceReader extends AbstractReader<DatosMinisterio> {
-
 /*
 * Lee el fichero JSON, valida su estructura y devuelve los datos procesados filtrados por las provincias de interés.
 * @throws Error si el JSON no tiene la estructura esperada.

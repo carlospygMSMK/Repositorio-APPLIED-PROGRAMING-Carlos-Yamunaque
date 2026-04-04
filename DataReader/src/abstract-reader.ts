@@ -1,12 +1,7 @@
-/*
- * Define la clase abstracta AbstractReader y la interfaz genérica que deben implementar todos los lectores de datos del proyecto.
- */
-
+/*Define la clase abstracta AbstractReader y la interfaz genérica que deben implementar todos los lectores de datos del proyecto.*/
 import fs from 'node:fs';
 
-/*
- * POJO — Plain Old JavaScript Object (clave:valor) Se usa como tipo intermedio antes de la validación y mapeo de dominio.
- */
+/*POJO — Plain Old JavaScript Object (clave:valor) Se usa como tipo intermedio antes de la validación y mapeo de dominio.*/
 export interface POJO {
   [key: string]: unknown;
 }
