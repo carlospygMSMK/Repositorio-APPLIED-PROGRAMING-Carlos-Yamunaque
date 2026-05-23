@@ -1,0 +1,39 @@
+{
+  "name": "procesador-precios-combustible",
+  "version": "2.0.0",
+  "description": "Procesador de precios de combustibles del Ministerio de Transición Ecológica",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc -p .",
+    "start": "node dist/index.js",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "combustible",
+    "precios",
+    "ministerio",
+    "españa",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

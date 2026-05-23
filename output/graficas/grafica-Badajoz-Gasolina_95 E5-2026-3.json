@@ -1,0 +1,15 @@
+{
+  "titulo": "Tendencias de Gasolina 95 E5 en Badajoz",
+  "combustible": "Gasolina 95 E5",
+  "provincia": "Badajoz",
+  "mes": 3,
+  "anio": 2026,
+  "precioPromedioGeneral": 1.629,
+  "diasSemana": [
+    {
+      "dia": "Martes",
+      "precioPromedio": 1.629,
+      "numEstaciones": 1
+    }
+  ]
+}

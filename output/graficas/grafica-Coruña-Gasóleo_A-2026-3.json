@@ -1,0 +1,15 @@
+{
+  "titulo": "Tendencias de Gasóleo A en Coruña",
+  "combustible": "Gasóleo A",
+  "provincia": "Coruña",
+  "mes": 3,
+  "anio": 2026,
+  "precioPromedioGeneral": 1.539,
+  "diasSemana": [
+    {
+      "dia": "Martes",
+      "precioPromedio": 1.539,
+      "numEstaciones": 1
+    }
+  ]
+}
